@@ -10,7 +10,7 @@ setwd("./Documents/Coursera/datascience_jh/getclean/getclean/quizzes")
 # Use this data to find the time that the datasharing repo was created. 
 # What time was it created?
 
-# Don't run from RStudiohave to run from R command line
+# Don't run from RStudio have to run from R command line
 install.packages("httr ")
 install.packages("httpuv")
 install.packages("jsonlite")
