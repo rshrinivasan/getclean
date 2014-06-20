@@ -18,8 +18,22 @@ if (file.exists(fname)) {
     # Create a logical vector that identifies households on greater 
     # than 10 acres who sold more  than $10,000 worth of agriculture products.
     # Assign vector agricultureLogical
-    agricultureLogical <- subset(htbl, [(htbl$ACR == 3 & htbl$AGS == 6), ]
-    
-    
-    # Refer to code book to find the column name and value to filter
-    # Code 24 for column VAL is $1000000+
+    agricultureLogical <- htbl$ACR == 3 & htbl$AGS == 6
+# Q1 Apply the which() function like this to identify the rows 
+# of the data frame where the logical vector is TRUE. which(agricultureLogical) 
+# What are the first 3 values that result?
+    which(agricultureLogical) # Ans. 125, 238, 262
+
+# download jpeg file for Ques 2
+
+# set url
+furl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fjeff.jpg"
+fname <- "instructor.jpeg"
+download.file(furl, fname, method = "curl"  )
+# install and load package jpeg
+install.packages("jpeg")
+library(jpeg)
+# read jpg file into a raster array
+arr <- readJPEG(fname, native = TRUE)
+# What are the 30th and 80th quantiles of the resulting data?
+quantile(arr, probs = c(0.3, 0.8)) # Ans -15259150 -10575416
